@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello HTML Templates</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+
+<div>
+
+    <h1>This is the results page</h1>
+
+    <p>This will display formatted statistics for github user:  {{ username }} </p>
+
+    {% if nonforked == True %}
+    <p>
+        Only showing stats for nonforked repositories
+    </p>
+    {% else %}
+    {% endif %}
+
+    <p>
+        {% for key, value in output.items() %}
+            {{key}} : {{value}}
+            <br>
+        {% endfor %}
+    </p>
+
+    
+</div>
+
+
+</body>
+</html>

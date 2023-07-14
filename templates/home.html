@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello HTML Templates</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+
+<div>
+
+    <h1>Github User Aggregated Statistics</h1>
+
+    <p>
+      This website allows you to enter a username and it will return statistics for repositories created by that github user.
+
+      The statistics presented in the analysis include the total number of repositories, stargazer count, and more
+    </p>
+
+    <p>
+      To get started, simply enter a username in the textbox below and click submit!
+    </p>
+
+</div>
+
+<style> 
+    textarea {
+    width: 10%;
+    height: 15px;
+    padding: 16px 16px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 14px;
+    resize: none;
+    }
+  </style>
+  <form action="/result" method="POST">
+    <p>
+        Enter username here: <textarea name="username"></textarea>
+    </p>
+    
+    <p>
+        Check the box if you only want stats from nonforked repositories
+        <input type='hidden' value='false' name='nonforked' id="nonforkedHidden">
+        <input type="checkbox" onchange= "document.getElementById('nonforkedHidden').value = this.checked">
+    </p>
+    <button type="submit" name="submit">Submit</button>
+  </form>
+
+  {% if error == True %}
+  <p>
+    Error: {{ invalid }} is not a valid username
+  </p>
+  {% else %}
+  {% endif %}
+
+
+</body>
+</html>
