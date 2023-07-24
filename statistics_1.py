@@ -6,7 +6,7 @@ import json
 
 def get_stats(username, nonforked):
     # Create github object
-    g = Github("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")
+    g = Github("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")
     try:
         user = g.get_user(username)
     except github.GithubException:
@@ -45,7 +45,5 @@ def get_stats(username, nonforked):
     #Create dictionary for output
     output = {'total repository count':total_count, 'total stargazers':total_stargazer_count, 'total fork count': total_fork_count,
           'average repository size (MB)': avg_rep_size, 'languages': languages_dict}
-
-    #Proper json formatting of output
-    # output_json = json.dumps(output, indent=2)
+    
     return output
