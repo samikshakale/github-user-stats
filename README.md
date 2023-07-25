@@ -3,7 +3,7 @@ Gets aggregated statistics across a user's repositories.
 ## How to Use
 Run Flask server which hosts the website on localhost:5000. Enter a github username in the textbox and check the checkbox if you want to retrieve statistics on ONLY the user's nonforked repositories.
 
-After clicking the submit button, you will be redirected to another page containing the resultsof the following statistics:
+After clicking the submit button, you will be redirected to another page containing the results of the following statistics:
 * total repository count
 * total stargazer count
 * total fork count
